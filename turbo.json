@@ -49,5 +49,15 @@
       "dependsOn": ["^topo"],
       "outputs": ["node_modules/.cache/tsbuildinfo.json"]
     }
+  },
+  "pipeline": {
+    "build": { "outputs": ["dist/**", "build/**"] },
+    "lint": { "outputs": [] },
+    "test": { "outputs": [] },
+    "deploy": {
+      "dependsOn": ["build"],
+      "outputs": []
+    },
+    "infra": { "outputs": [] }
   }
 }
